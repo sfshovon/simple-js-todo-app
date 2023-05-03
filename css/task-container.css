@@ -1,0 +1,104 @@
+/* Task-Container CSS Starts Here */
+.tasks-container {
+  margin-right: 5px;
+  padding: 20px;
+}
+.tasks-container > li > label > p {
+  display: inline-block;
+  word-break: break-word;
+  font-size: 22px;
+  font-weight: 500;
+  color: #073f47;
+}
+.tasks-container.overflow {
+  overflow-y: auto;
+  max-height: 400px;
+}
+.tasks-container::-webkit-scrollbar {
+  width: 10px;
+}
+.tasks-container::-webkit-scrollbar-track {
+  background-color: #7e8b8d;
+  border-radius: 25px;
+}
+.tasks-container::-webkit-scrollbar-thumb{
+  background-color:rgb(9, 86, 111);
+  border-radius: 25px;
+}
+.tasks-container .task-list{
+  list-style: none;
+  font-size: 18px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  align-items: flex-start;
+  border-bottom: 1px solid rgb(0, 17, 50);
+}
+.tasks-container .task-list:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.tasks-container .task-list label {
+  display: flex;
+  align-items: flex-start;
+}
+.task-list label input {
+  margin-top: 7px;
+  accent-color: #08c13c;
+}
+.task-list label p {
+  user-select: none;
+  margin-left: 12px;
+  word-wrap: break-word;
+}
+.task-list label p.checked {
+  text-decoration: line-through;
+}
+.tasks-container .settings {
+  position: relative;
+}
+.settings :where(i, li) {
+  cursor: pointer;
+}
+.settings .task-menu {
+  z-index: 10;
+  right: -5px;
+  bottom: -65px;
+  padding: 5px 0;
+  background: rgb(225, 244, 245);
+  position: absolute;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: top right;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+.tasks-container .task-list:last-child .task-menu {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+.tasks-container .task-list:first-child .task-menu { 
+  bottom: -65px;
+  transform-origin: top right;
+}
+.task-menu.show {
+  transform: scale(1);
+}
+.task-menu li {
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 2px;
+  padding: 17px 15px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+.task-menu li:last-child {
+  margin-bottom: 0;
+}
+.settings li:hover {
+  background: #f5f5f5;
+}
+.settings li i {
+  padding-right: 8px;
+}
+/* Task-Container CSS Ends Here */

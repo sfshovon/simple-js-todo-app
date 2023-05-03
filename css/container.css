@@ -1,0 +1,63 @@
+/* Container CSS Starts Here */
+.container {
+  max-width: 650px;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 50px;
+  box-shadow: 10px 10px 10px rgba(14, 88, 153, 0.5);
+  background-color: rgb(196, 222, 227);  
+  opacity: 1;
+}
+.todo-input {
+  display: flex;
+  height: 50px;
+  position: relative;
+}
+.todo-input i {
+  top: 50%;
+  position: absolute;
+  transform: translate(17px, -50%);
+  color: #6472a9;
+}
+.todo-input input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 24px;
+  border-radius: 25px;
+  padding: 0 20px 0px 53px;
+  border: 2px solid rgb(124, 208, 206);
+}
+.todo-input input:focus,
+.todo-input input.active {
+  border: 3px solid #010908;
+}
+.todo-input input::placeholder {
+  color: #6472a9;
+}
+
+.add-btn, .clear-all-btn {
+  opacity: 0.6;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 10px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  transition: transform 0.25s ease;
+}
+.add-btn {
+  letter-spacing: 1px;
+  background-color:rgb(4, 123, 163);
+}
+.add-btn:active {
+  color: black;
+  background-color: rgb(199, 227, 222);
+  transform: scale(0.93);
+}
+.add-btn:hover {
+  color: rgb(246, 248, 248);
+  background-color:rgb(163, 4, 44);
+}
+/* Container CSS Ends Here */

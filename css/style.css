@@ -1,246 +1,25 @@
 
+@import url('container.css');
+@import url('toggle-container.css');
+@import url('task-container.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
+body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
   background-image: url('/images/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.7;
-}
-/* container css starts here */
-.container{
-  max-width: 650px;
-  padding: 30px;
-  margin: 40px auto;
-  border-radius: 50px;
-  box-shadow: 10px 10px 10px rgba(14, 88, 153, 0.5);
-  background-color: rgb(196, 222, 227);  
-  opacity: 1;
+  opacity: 0.8;
 }
 
-.todo-input{
-  display: flex;
-  height: 50px;
-  position: relative;
-}
-.todo-input i{
-  top: 50%;
-  position: absolute;
-  transform: translate(17px, -50%);
-  color: #6472a9;
-}
-.todo-input input{
-  height: 100%;
-  width: 100%;
-  outline: none;
-  font-size: 24px;
-  border-radius: 25px;
-  padding: 0 20px 0px 53px;
-  border: 2px solid rgb(124, 208, 206);
-}
-.todo-input input:focus,
-.todo-input input.active{
-  border: 3px solid #010908;
-}
-.todo-input input::placeholder{
-  color: #6472a9;
-}
-
-.add-btn, .clear-all-btn{
-  opacity: 0.6;
-  color: #fff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 500;
-  margin-left: 10px;
-  padding: 5px 15px;
-  border-radius: 20px;
-  transition: transform 0.25s ease;
-
-}
-.add-btn{
-  letter-spacing: 1px;
-  background-color:rgb(4, 123, 163);
-}
-.add-btn:active{
-  color: black;
-  background-color: rgb(199, 227, 222);
-  transform: scale(0.93);
-}
-.add-btn:hover {
-  color: rgb(246, 248, 248);
-  background-color:rgb(163, 4, 44);
-}
-
-/* container css ends here */
-
-/* toggle-container css starts here */
-.toggle-container{
-  max-width: 800px;
-  margin: 40px auto;
-  border-radius: 20px;
-  background-color: rgb(191, 230, 240); 
-}
-
-.toggle-controls, li{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  white-space: initial;
-}
-.toggle-controls{
-  padding: 15px 25px;
-  border-bottom: 2px solid rgb(13, 6, 66);
-}
-
-.task-status span{
-  margin: 0 15px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #424242;
-  cursor: pointer;
-}
-.task-status span.active{
-  color: #23cb71;
-}
-span:hover{
-  color:rgb(73, 118, 182);
-}
-.task-status span:first-child{
-  margin-left: 0;
-}
-.clear-all-btn{
-  letter-spacing: .5px;
-  background-color:rgb(163, 4, 44);
-}
-.clear-all-btn.active{
-  opacity: 0.9;
-  pointer-events: auto;
-}
-.clear-all-btn:active{
-  color: black;
-  background-color: rgb(133, 206, 145);
-  transform: scale(0.93);
-}
-.clear-all-btn:hover{
-
-}
-/* toggle-container css ends here */
-
-/* task-container css starts here */
-.tasks-container{
-  margin-right: 5px;
-  padding: 20px;
-}
-.tasks-container > li > label > p{
-  display: inline-block;
-  word-break: break-word;
-  font-size: 22px;
-  font-weight: 500;
-  color: #073f47;
-}
-.tasks-container.overflow{
-  overflow-y: auto;
-  max-height: 400px;
-}
-.tasks-container::-webkit-scrollbar{
-  width: 10px;
-}
-.tasks-container::-webkit-scrollbar-track{
-  background-color: #7e8b8d;
-  border-radius: 25px;
-}
-.tasks-container::-webkit-scrollbar-thumb{
-  background-color:rgb(9, 86, 111);
-  border-radius: 25px;
-}
-.tasks-container .task-list{
-  list-style: none;
-  font-size: 18px;
-  margin-bottom: 18px;
-  padding-bottom: 16px;
-  align-items: flex-start;
-  border-bottom: 1px solid rgb(0, 17, 50);
-}
-.tasks-container .task-list:last-child{
-  margin-bottom: 0;
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-.tasks-container .task-list label{
-  display: flex;
-  align-items: flex-start;
-}
-
-.task-list label input{
-  margin-top: 7px;
-  accent-color: #08c13c;
-}
-.task-list label p{
-  user-select: none;
-  margin-left: 12px;
-  word-wrap: break-word;
-}
-.task-list label p.checked{
-  text-decoration: line-through;
-}
-.tasks-container .settings{
-  position: relative;
-}
-
-.settings :where(i, li){
-  cursor: pointer;
-}
-.settings .task-menu{
-  z-index: 10;
-  right: -5px;
-  bottom: -65px;
-  padding: 5px 0;
-  background: rgb(225, 244, 245);
-  position: absolute;
-  border-radius: 4px;
-  transform: scale(0);
-  transform-origin: top right;
-  box-shadow: 0 0 6px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease;
-}
-.tasks-container .task-list:last-child .task-menu{
-  bottom: 0;
-  transform-origin: bottom right;
-}
-.tasks-container .task-list:first-child .task-menu{
-  bottom: -65px;
-  transform-origin: top right;
-}
-.task-menu.show{
-  transform: scale(1);
-}
-.task-menu li{
-  height: 25px;
-  font-size: 16px;
-  margin-bottom: 2px;
-  padding: 17px 15px;
-  cursor: pointer;
-  justify-content: flex-start;
-}
-.task-menu li:last-child{
-  margin-bottom: 0;
-}
-.settings li:hover{
-  background: #f5f5f5;
-}
-.settings li i{
-  padding-right: 8px;
-}
-
+/* Media Queries */
 @media (max-width: 1024px) {
   body{
     padding: 0 10px;
@@ -271,5 +50,4 @@ span:hover{
     background-position: center;
     overflow: hidden;
   }
-  
 }

@@ -1,0 +1,51 @@
+/* Toggle-Container CSS Starts Here */
+.toggle-container {
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 20px;
+  background-color: rgb(191, 230, 240); 
+}
+.toggle-controls, li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: initial;
+}
+.toggle-controls {
+  padding: 15px 25px;
+  border-bottom: 2px solid rgb(13, 6, 66);
+}
+.task-status span {
+  margin: 0 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #424242;
+  cursor: pointer;
+}
+.task-status span.active {
+  color: #23cb71;
+}
+span:hover {
+  color:rgb(73, 118, 182);
+}
+.task-status span:first-child {
+  margin-left: 0;
+}
+.clear-all-btn {
+  letter-spacing: .5px;
+  background-color:rgb(163, 4, 44);
+}
+.clear-all-btn.active {
+  opacity: 0.9;
+  pointer-events: auto;
+}
+.clear-all-btn:active {
+  color: black;
+  background-color: rgb(133, 206, 145);
+  transform: scale(0.93);
+}
+.clear-all-btn:hover {
+  color: rgb(163, 4, 44);
+  background-color:wheat;
+}
+/* Toggle-Container CSS Ends Here */
